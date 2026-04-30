@@ -5,6 +5,11 @@ import os
 import sys
 from typing import Optional
 
+# Windows 环境强制 stdout/stderr 使用 UTF-8，避免中文乱码
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import typer
 from rich.console import Console
 from rich.table import Table
@@ -22,8 +27,8 @@ app = typer.Typer(
     help="Claude Code 跨会话项目级记忆系统",
     no_args_is_help=True,
 )
-console = Console()
-error_console = Console(stderr=True)
+console = Console(force_terminal=True)
+error_console = Console(stderr=True, force_terminal=True)
 
 
 def _json_output(data: object) -> None:
