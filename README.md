@@ -107,7 +107,3 @@ src/project_memory/
 - **typer** + **rich** - CLI 框架与终端渲染
 - **pydantic** - 数据模型与校验
 - **httpx** - 在线嵌入 API 客户端
-
-## 许可
-
-Private - Internal Use Only
