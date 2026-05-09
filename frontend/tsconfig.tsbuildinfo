@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/client.ts","./src/components/memoryeditor.tsx","./src/components/memorytable.tsx","./src/components/searchbar.tsx","./src/components/statscard.tsx","./src/hooks/usememories.ts","./src/types/index.ts"],"version":"5.9.3"}

@@ -302,5 +302,16 @@ def stats(
             console.print(f"  {t}: {count}")
 
 
+@app.command()
+def serve(
+    host: str = typer.Option("127.0.0.1", "--host", "-h", help="监听地址"),
+    port: int = typer.Option(8765, "--port", help="监听端口"),
+) -> None:
+    """启动 Web UI 服务器"""
+    from .server import serve as start_server
+
+    start_server(host=host, port=port)
+
+
 if __name__ == "__main__":
     app()
